@@ -6,6 +6,7 @@ import { updateLoanType, updatePropertyType } from "../../ducks/reducer";
 class WizardOne extends Component {
   render() {
     const { updateLoanType, updatePropertyType } = this.props;
+
     return (
       <div className="parent-div">
         <div className="vert-align">
@@ -23,9 +24,7 @@ class WizardOne extends Component {
           </select>{" "}
           <br />
           <p>What type of property are you purchasing?</p> <br />
-          <select
-            onChange={this.props.updatePropertyType(this.props.propertyType)}
-          >
+          <select onChange={e => updatePropertyType(e.target.value)}>
             <option value="Single Family Home">Single Family Home</option>
             <option value="Town Home">Townhome</option>
             <option value="Condo">Condo</option>
